@@ -1,0 +1,46 @@
+<script>
+ 
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = data;
+
+      authors.map(function(author) {
+        let id= document.createElement('id');
+        let fname = document.createElement('fname');
+        let sur = document.createElement('sur');
+
+        name.innerHTML = `${author.name}`;
+        email.innerHTML = `${author.email}`;
+
+        li.appendChild(fname);
+        li.appendChild(sur);
+        list.appendChild(id);
+      });
+    })
+.catch(function(error) {
+      console.log(error);
+    });
+  ul.appendChild(list);
+</script>
+
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+let data = {
+  name: 'Sammy'
+}
+
+let request = new Request(url, {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: new Headers({
+    'Content-Type': 'application/json; charset=UTF-8'
+  })
+});
+
+fetch(request)
+  .then(function() {
+    // Handle response you get from the API
+  });
